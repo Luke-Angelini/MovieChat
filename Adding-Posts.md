@@ -11,7 +11,7 @@
   appearance: none;
   background: #f2f2f2;
   padding: 12px;
-  border-radius: 3px;
+  border-radius: 20px;
   width: 250px;
   font-size: 14px;
 }
