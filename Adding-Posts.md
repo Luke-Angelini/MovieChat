@@ -3,15 +3,15 @@
 
 <body>
 <style>
-.custom-field input {
-  border: none;
+custom-field input {
+  border: 2px solid darkgrey;
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: #f2f2f2;
   padding: 12px;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 250px;
   font-size: 14px;
 }
@@ -32,6 +32,10 @@
             <pre></pre>
         </custom-field>
     </form>
+    <div class="col-4">
+                    <h2 class="card-title">Movies</h2>
+                    <p id="demo" onclick="myFunction()">Click me to see movies.</p>
+    </div>
     <script>
         let movies = [];
         // example {id:1592304983049, title: 'Avengers: Endgame', reason: 'good action scenes.'}
@@ -54,5 +58,15 @@
         document.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('btn').addEventListener('click', addMovie);
         });
+        function myFunction() {
+         for (var i=0;i<movies.length;i+=1) {
+            console.log(movies[i].ftitle);
+            const newDiv = document.createElement("div");
+            const newContent = document.createTextNode("Movie: " + movies[i].ftitle + ", Comments: " + movies[i].reason);
+            newDiv.appendChild(newContent);
+            const currentDiv = document.getElementById("div1");
+            document.body.insertBefore(newDiv, currentDiv);
+            }
+        }
     </script>
 </body>
